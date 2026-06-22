@@ -34,7 +34,7 @@ Projeto estruturado com modelagem relacional consistente e foco em escalabilidad
 
 ### 🧩 Modelo Lógico
 
-> [!IMPORTANT]
+> [!TIP]
 > Pessoa (**CPF_CNPJ**, nomeCompleto, CEP, complemento, logradouro, email1, email2, ddi, ddd, numero, tipoPessoa)
 > 
 > PessoaFisica (**CPF_CNPJ**, dataNascimento)  
