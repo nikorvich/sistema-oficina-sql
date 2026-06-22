@@ -34,56 +34,57 @@ Projeto estruturado com modelagem relacional consistente e foco em escalabilidad
 
 ### 🧩 Modelo Lógico
 
-Pessoa (**CPF_CNPJ**, nomeCompleto, CEP, complemento, logradouro, email1, email2, ddi, ddd, numero, tipoPessoa)
-
-PessoaFisica (**CPF_CNPJ**, dataNascimento)  
-	↳ CPF_CNPJ referencia Pessoa
-
-PessoaJuridica (**CPF_CNPJ**, inscricaoEstadual, contato)  
-  ↳ CPF_CNPJ referencia Pessoa
-
-Proprietario (**idProprietario**, CPF_CNPJ, dataInicio, dataFim)  
-  ↳ CPF_CNPJ referencia Pessoa
-
-Marca (**idMarca**, nomeMarca, descricao)
-
-Modelo (**idModelo**, nomeModelo, descricao, idMarca)  
-  ↳ idMarca referencia Marca
-
-Veiculo (**Placa**, chassi, Kilometragem, anoFabricacao, anoModelo, idProprietario, idModelo)  
-  ↳ idProprietario referencia Proprietario  
-  ↳ idModelo referencia Modelo
-
-Acessorio (**idAcessorio**, descricao, placa)  
-  ↳ placa referencia Veiculo
-
-Fabricante (**idFabricantePeca**, emailFabricantePeca, telefoneFabricantePeca)
-
-Peca (**idPeca**, valorUnitario, descricao, nomePeca, quantidadePeca, idFabricante, idGarantia)  
-  ↳ idFabricante referencia Fabricante  
-  ↳ idGarantia referencia Garantia
-
-PecaUsadas (**idPeca**, valorUnitario, descricao, nomePeca, quantidadePeca, idFabricante, idOS)  
-  ↳ idFabricante referencia Fabricante  
-  ↳ idOS referencia OrdemServico
-
-OrdemServico (**idOS**, dataEntrada, dataSaida, status, valorPago, placa)  
-  ↳ placa referencia Veiculo
-
-Servico (**idServico**, descricao, precoServico, idOS, cpfFuncionario)  
-  ↳ idOS referencia OrdemServico  
-  ↳ cpfFuncionario referencia Funcionario
-
-Especialidade (**idEspecialidade**, descricao, tipoEspecialidade)
-
-Funcionario (**CpfFuncionario**, nomeFuncionario, emailFuncionario, telefoneFuncionario, idEspecialidade)  
-  ↳ idEspecialidade referencia Especialidade
-
-Garantia (**idGarantia**, idServico, dataInicio, dataFim)  
-  ↳ idServico referencia Servico
-
-NotaFiscal (**idNotaFiscal**, dataEmissao, idOs)  
-  ↳ idos referencia OrdemServico
+> [!IMPORTANT]
+> Pessoa (**CPF_CNPJ**, nomeCompleto, CEP, complemento, logradouro, email1, email2, ddi, ddd, numero, tipoPessoa)
+> 
+> PessoaFisica (**CPF_CNPJ**, dataNascimento)  
+> 	↳ CPF_CNPJ referencia Pessoa
+> 
+> PessoaJuridica (**CPF_CNPJ**, inscricaoEstadual, contato)  
+>   ↳ CPF_CNPJ referencia Pessoa
+> 
+> Proprietario (**idProprietario**, CPF_CNPJ, dataInicio, dataFim)  
+>   ↳ CPF_CNPJ referencia Pessoa
+> 
+> Marca (**idMarca**, nomeMarca, descricao)
+> 
+> Modelo (**idModelo**, nomeModelo, descricao, idMarca)  
+>   ↳ idMarca referencia Marca
+> 
+> Veiculo (**Placa**, chassi, Kilometragem, anoFabricacao, anoModelo, idProprietario, idModelo)  
+>   ↳ idProprietario referencia Proprietario  
+>   ↳ idModelo referencia Modelo
+> 
+> Acessorio (**idAcessorio**, descricao, placa)  
+>   ↳ placa referencia Veiculo
+> 
+> Fabricante (**idFabricantePeca**, emailFabricantePeca, telefoneFabricantePeca)
+> 
+> Peca (**idPeca**, valorUnitario, descricao, nomePeca, quantidadePeca, idFabricante, idGarantia)  
+>   ↳ idFabricante referencia Fabricante  
+>   ↳ idGarantia referencia Garantia
+> 
+> PecaUsadas (**idPeca**, valorUnitario, descricao, nomePeca, quantidadePeca, idFabricante, idOS)  
+>   ↳ idFabricante referencia Fabricante  
+>   ↳ idOS referencia OrdemServico
+> 
+> OrdemServico (**idOS**, dataEntrada, dataSaida, status, valorPago, placa)  
+>   ↳ placa referencia Veiculo
+> 
+> Servico (**idServico**, descricao, precoServico, idOS, cpfFuncionario)  
+>   ↳ idOS referencia OrdemServico  
+>   ↳ cpfFuncionario referencia Funcionario
+> 
+> Especialidade (**idEspecialidade**, descricao, tipoEspecialidade)
+> 
+> Funcionario (**CpfFuncionario**, nomeFuncionario, emailFuncionario, telefoneFuncionario, idEspecialidade)  
+>   ↳ idEspecialidade referencia Especialidade
+> 
+> Garantia (**idGarantia**, idServico, dataInicio, dataFim)  
+>   ↳ idServico referencia Servico
+> 
+> NotaFiscal (**idNotaFiscal**, dataEmissao, idOs)  
+>   ↳ idos referencia OrdemServico
 
 ---
 
