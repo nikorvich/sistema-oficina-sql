@@ -1,4 +1,4 @@
-# sistema-oficina-sql — Sistema de Gestão para Oficina Mecânica
+# Sistema de Gestão para Oficina Mecânica
 
 Banco de dados relacional projetado para suportar operações completas de uma oficina mecânica, incluindo controle de clientes, veículos, ordens de serviço, estoque e faturamento.
 
